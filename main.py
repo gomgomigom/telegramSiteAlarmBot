@@ -1,6 +1,10 @@
 import Constants as keys
 from telegram.ext import *
 import Responses as R
+import Check_site as Check
+import Alarm as Alarm
+from time import sleep
+
 
 print("Bot started...")
 
@@ -39,4 +43,36 @@ def main():
     updater.idle()
 
 
-main()
+def camping_site_alarm():
+    Check.open_web()
+    Check.wait(10)
+    i = 0
+    while True:
+        Check.wait(3)
+        sleep(1)
+        site_list = Check.create_list()
+        Alarm.print_state(
+            site_list[0], site_list[1], site_list[2], site_list[3]
+        )
+
+        if i == 0:
+            pre_site = 0
+            i += 1
+        else:
+            pass
+
+        current_site = site_list[0] + site_list[1] + site_list[2] + site_list[3]
+
+        if pre_site != current_site:
+            pre_site = current_site
+            Alarm.telegram_send_link(
+                site_list[0], site_list[1], site_list[2], site_list[3]
+            )
+        else:
+            pass
+
+        Check.refresh_site()
+
+
+# main()
+camping_site_alarm()
