@@ -1,5 +1,5 @@
 import Constants as keys
-from telegram.ext import *
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import Responses as R
 import Check_site as Check
 import Alarm as Alarm
@@ -50,7 +50,7 @@ def camping_site_alarm():
     while True:
         Check.wait(3)
         sleep(1)
-        site_list = Check.create_list()
+        site_list = Check.create_site_list()
         Alarm.print_state(
             site_list[0], site_list[1], site_list[2], site_list[3]
         )

@@ -5,7 +5,7 @@ import Variable as V
 
 
 bot = telegram.Bot(C.API_KEY)
-chat_id = C.GROUP_CHAT_ID
+chat_id = V.CHAT_ID
 
 
 def current_time():

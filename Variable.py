@@ -1,7 +1,12 @@
 from selenium import webdriver
+import Constants as C
 
 driver = webdriver.Chrome("C:/Users/gomigom/Desktop/shortcut/chromedriver.exe")
 
+g = C.GROUP_CHAT_ID
+c = C.CHAT_ID
+
+CHAT_ID = c
 year = 2021  # 몇 년
 month = 12  # 몇 월
 day = 18  # 몇 일

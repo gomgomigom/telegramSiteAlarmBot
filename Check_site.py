@@ -43,15 +43,11 @@ def check_site_D():
     return len(site_list_D) - 1
 
 
-def remain_site(a, b, c, d):
-    return a + b + c + d
-
-
 def refresh_site():
     driver.refresh()
 
 
-def create_list():
+def create_site_list():
     site_list = []
     site_list.append(check_site_A())
     site_list.append(check_site_B())
