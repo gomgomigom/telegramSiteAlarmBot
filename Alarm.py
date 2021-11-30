@@ -14,9 +14,11 @@ def current_time():
     return current_time
 
 
-def print_state(a, b, c, d):
+def print_state(a, b, c, d, time_interval, repeat, detected):
     print("------------------------------")
-    print(f"현재시간 = {current_time()}")
+    print(
+        f"현재시간 = {current_time()},  경과시간: {time_interval},  반복횟수: {repeat},  발견: {detected}"
+    )
     print(f"남은 자리  A site: {a},  B site: {b},  C site: {c},  D site: {d}")
 
 
